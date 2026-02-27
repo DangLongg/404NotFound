@@ -796,6 +796,52 @@ body::before{
   transform: scale(1.1);
 }
 
+
+/* Section tổng */
+.guide-section{
+    text-align:center;
+    padding:120px 20px;
+}
+
+/* Box xanh biển nhạt */
+.guide-badge{
+    display:inline-block;
+    background:#E6F4FF;
+    color:#1B6DC1;
+    padding:10px 22px;
+    border-radius:25px;
+    font-family:'Inter', sans-serif;
+    font-size:16px;
+    margin-bottom:25px;
+}
+
+/* Tiêu đề gradient xanh biển */
+.guide-title{
+    font-family:'Inter', sans-serif;
+    font-weight:700;        /* quan trọng */
+    font-size:64px;         /* 72 hơi to với Inter */
+    line-height:1.2;        /* để dấu không bị chạm */
+    letter-spacing:-1px;    /* giúp chữ gọn hơn */
+    margin:0 auto 25px;
+    max-width:900px;
+
+    background: linear-gradient(90deg, #007CF0, #00DFD8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Mô tả */
+.guide-desc{
+    font-family:'Inter', sans-serif;
+    font-size:18px;
+    color:#000;
+    max-width:800px;
+    margin:0 auto;
+    line-height:1.6;
+}
+	
+	
+	
 /* ===== RESPONSIVE ===== */
 
 @media(max-width:900px){
@@ -813,191 +859,307 @@ body::before{
     .card:nth-child(3){transform:none;}
 }
 
-/* ============================= */
-/* MOBILE OPTIMIZATION */
-/* ============================= */
+/* ===== GOLDEN SECTION UPDATED ===== */
 
-@media (max-width:1024px){
-    .features,
-    .impact-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .benefit-box{
-        padding:60px 40px 50px 120px;
-    }
-
-    .benefit-icon{
-        left:30px;
-        top:40px;
-    }
+.golden-section{
+    width:90%;                 /* rộng hơn */
+    max-width:1600px;          /* tăng giới hạn */
+    margin:20px auto 100px;    /* giảm khoảng cách phía trên */
+    padding:50px 90px;         /* tăng ngang, giữ chiều cao gọn */
+    border-radius:24px;
+    background:linear-gradient(135deg,#004AAD,#007CF0);
+    color:#fff;
+    box-shadow:0 30px 70px rgba(0,0,0,0.2);
 }
 
-@media (max-width:768px){
-
-    /* HEADER */
-    .header-inner{
-        width:92%;
-    }
-
-    .top-menu{
-        display:none; /* ẩn menu desktop */
-    }
-
-    /* HERO */
-    .hero-text{
-        padding-top:120px;
-        margin:0 6%;
-        max-width:100%;
-    }
-
-    .main-line{
-        font-size:36px;
-    }
-
-    .sub-line{
-        font-size:22px;
-    }
-
-    .description{
-        font-size:16px;
-    }
-
-    /* BOXES */
-    .info-boxes{
-        flex-direction:column;
-        margin:30px 6%;
-    }
-
-    .box{
-        width:100%;
-    }
-
-    /* SECTION TITLES */
-    .big-title{
-        font-size:42px;
-    }
-
-    .medium-title{
-        font-size:22px;
-    }
-
-    /* GALLERY */
-    .gallery,
-    .gallery-text{
-        grid-template-columns:1fr;
-        margin-left:6%;
-        margin-right:6%;
-    }
-
-    /* LIMITATION */
-    .limitation-section{
-        flex-direction:column;
-        margin:100px 6%;
-        gap:30px;
-    }
-
-    .limitation-left div{
-        font-size:40px;
-    }
-
-    /* IMAGE CARDS */
-    .image-cards{
-        grid-template-columns:1fr;
-        margin:40px 6%;
-    }
-
-    .card:nth-child(2),
-    .card:nth-child(3){
-        transform:none;
-    }
-
-    /* IMG9 */
-    .img9-section{
-        height:60vh;
-        margin-top:150px;
-    }
-
-    .img9-text{
-        font-size:34px;
-        left:20px;
-        top:40px;
-    }
-
-    .discover-box{
-        top:75%;
-        padding:12px 20px;
-        font-size:14px;
-    }
-
-    /* SOLUTION */
-    .solution-heading .big{
-        font-size:40px;
-    }
-
-    .solution-heading .medium{
-        font-size:22px;
-    }
-
-    /* FEATURES */
-    .features{
-        grid-template-columns:1fr;
-        padding:0 6%;
-    }
-
-    /* BENEFITS */
-    .benefit-section{
-        margin:100px 6%;
-    }
-
-    .benefit-box{
-        padding:70px 25px 40px 25px;
-    }
-
-    .benefit-icon{
-        position:static;
-        margin-bottom:20px;
-    }
-
-    .mini-boxes,
-    .mini-boxes.three,
-    .mini-boxes.four,
-    .mini-boxes.five{
-        grid-template-columns:1fr;
-    }
-
-    /* IMPACT */
-    .impact-grid{
-        grid-template-columns:1fr;
-        margin:40px 6% 100px;
-    }
-
-    .impact-title .big{
-        font-size:42px;
-    }
-
-    .impact-title .medium{
-        font-size:22px;
-    }
+.golden-header{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Inter', sans-serif;
+    font-weight:700;
+    font-size:26px;
+    margin-bottom:35px;
 }
 
-@media (max-width:480px){
+.golden-icon{
+    font-size:26px;
+}
 
-    .main-line{
-        font-size:30px;
-    }
+/* grid */
+.golden-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:24px;
+}
 
-    .big-title{
-        font-size:34px;
-    }
+/* box nhỏ */
+.golden-box{
+    background:rgba(255,255,255,0.15);
+    border-radius:16px;
+    padding:20px 22px;
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    transition:.3s;
+}
 
-    .feature-title .main{
-        font-size:38px;
-    }
+/* layout icon + text */
+.golden-row{
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+}
 
-    .img9-text{
-        font-size:28px;
-    }
+/* icon trắng */
+.golden-box .mini-icon{
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    background:rgba(255,255,255,0.25);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;          /* icon trắng */
+    font-size:18px;
+    flex-shrink:0;
+}
+
+.golden-box strong{
+    font-size:18px;
+}
+
+.golden-box p{
+    font-size:14px;
+    margin-top:6px;
+    line-height:1.5;
+    opacity:.9;
+}
+
+/* hover */
+.golden-box:hover{
+    transform:translateY(-6px);
+    background:rgba(255,255,255,0.25);
+}
+/* ===== QUIZ GUIDE SECTION ===== */
+
+.quiz-guide-section{
+    width:90%;
+    max-width:1500px;
+    margin:80px auto;   /* giảm từ 140px xuống 80px */
+}
+.quiz-heading{
+    text-align:center;
+    max-width:900px;
+    margin:0 auto 70px;
+}
+
+.quiz-small{
+    font-size:16px;
+    color:#6FCF97;
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.quiz-big{
+    font-family:'Inter', sans-serif;
+    font-weight:700;
+    font-size:48px;
+    margin-bottom:20px;
+}
+
+.quiz-heading p{
+    font-size:17px;
+    line-height:1.7;
+    color:#444;
+}
+
+/* GRID 2 BOX */
+.quiz-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:40px;
+}
+
+/* BOX */
+.quiz-box{
+    background:#ffffff;
+    padding:40px 35px;
+    border-radius:22px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.08);
+    transition:.3s;
+}
+
+.quiz-box:hover{
+    transform:translateY(-10px);
+    box-shadow:0 30px 60px rgba(0,0,0,0.15);
+}
+
+.quiz-box h3{
+    font-family:'Inter', sans-serif;
+    font-size:24px;
+    font-weight:700;
+    margin-bottom:25px;
+}
+
+/* LIST */
+.quiz-box ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.quiz-box li{
+    display:flex;
+    gap:14px;
+    margin-bottom:16px;
+    font-size:16px;
+    line-height:1.6;
+    color:#333;
+}
+
+.quiz-box i{
+    color:#2F80ED;
+    margin-top:4px;
+}
+
+/* ===== EXAMPLE SECTION ===== */
+
+/* ===== EXAMPLE CARD ===== */
+
+.example-section{
+    width:90%;
+    max-width:1100px;
+    margin:120px auto;
+    text-align:center;
+}
+
+.example-small{
+    color:#6FCF97;
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.example-big{
+    font-family:'Anton';
+    font-size:52px;
+    margin-bottom:50px;
+}
+
+/* Card chính */
+.example-card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(20px);
+    border-radius:24px;
+    box-shadow:0 40px 80px rgba(0,0,0,0.25);
+    overflow:hidden;
+    text-align:left;
+    margin-bottom:20px;
+}
+
+/* Header */
+.example-card-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 30px;
+    background:linear-gradient(135deg,#004AAD,#007CF0);
+    color:#fff;
+    font-weight:600;
+    font-family:'Inter';
+}
+
+/* Code area */
+.code-area{
+    background:#0F172A;
+    padding:35px 40px;
+}
+
+.code-area pre{
+    margin:0;
+    color:#E2E8F0;
+    font-family:'Inter', monospace;
+    line-height:1.8;
+    font-size:15px;
+    white-space:pre-wrap;
+}
+
+.code-area pre b{
+    color:#6FCF97;
+}
+
+/* Nút copy */
+.copy-btn{
+    background:#ffffff;
+    color:#004AAD;
+    border:none;
+    padding:8px 18px;
+    border-radius:30px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s ease;
+}
+
+.copy-btn:hover{
+    transform:scale(1.05);
+}
+.example-box pre b{
+    color:#6FCF97;
+    font-weight:700;
+}
+/* ===== GRADING SECTION ===== */
+
+.grading-section{
+    width:90%;
+    max-width:1100px;
+    margin:60px auto 40px;
+    text-align:center;
+}
+
+.grading-desc{
+    max-width:800px;
+    margin:20px auto 50px;
+    font-family:'Inter';
+    font-size:16px;
+    line-height:1.6;
+    color:#333;
+}
+
+/* đổi màu header để phân biệt */
+.grading-header{
+    background:linear-gradient(135deg,#0F2027,#2C5364);
+}
+
+
+/* ===== MINI BOX SMALL VERSION ===== */
+
+.grading-mini-box{
+    background: rgba(255, 255, 255, 0.35); /* trong suốt mạnh hơn */
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    padding:32px;               /* to hơn chút */
+    border-radius:22px;
+    text-align:center;
+    font-family:'Inter', sans-serif;
+    font-weight:600;
+    font-size:19px;
+    color:#000;
+
+    border:1px solid rgba(255,255,255,0.4); /* viền kính */
+    box-shadow:0 25px 55px rgba(0,0,0,0.15);
+    transition:0.3s ease;
+}
+
+.grading-mini-box:hover{
+    transform:translateY(-8px);
+    box-shadow:0 25px 55px rgba(0,0,0,0.18);
+}
+.grading-mini-container{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:22px;
+    max-width:700px;
+    margin:10px auto 0 auto; /* gần top hơn */
 }
 </style>
 </head>
@@ -1015,6 +1177,7 @@ body::before{
       <a href="#giaiphap">Giải pháp</a>
       <a href="#chucnang">Chức năng</a>
       <a href="#loiich">Lợi ích</a>
+      <a href="#huongdan">Hướng dẫn</a>
     </div>
   </div>
 </div>
@@ -1124,7 +1287,7 @@ body::before{
     TỪ NHẬN THỨC
   </div>
 
-  <a href="#giaiphap" class="discover-box">
+  <a href="#huongdan" class="discover-box">
     KHÁM PHÁ GIẢI PHÁP
     <div class="arrow-circle">↓</div>
 </a>
@@ -1362,7 +1525,254 @@ từng học sinh.
         <h3>Tương Lai Giáo Dục</h3>
         <p>Bước đầu tiên hướng tới một hệ thống giáo dục hiện đại, nhân văn và hiệu quả.</p>
     </div>
+</div>
+
+<section class="guide-section" id="huongdan">
+
+    <div class="guide-badge">
+        🎓 Dành cho học sinh THPT
+    </div>
+
+    <h2 class="guide-title">
+        Hướng Dẫn Viết Prompt<br>
+        Để AI Hỗ Trợ Học Tập Hiệu Quả
+    </h2>
+
+    <p class="guide-desc">
+        Học cách giao tiếp với AI chatbot để tạo câu hỏi trắc nghiệm, 
+        chấm điểm, phân tích lỗi sai và lập kế hoạch học tập cá nhân hóa 
+        một cách chuyên nghiệp.
+    </p>
+
+</section>
+<section class="golden-section">
+
+    <div class="golden-header">
+        <span class="golden-icon">🗝️</span>
+        <span>Nguyên tắc vàng khi viết prompt</span>
+    </div>
+
+    <div class="golden-grid">
+
+        <div class="golden-box">
+            <div class="golden-row">
+                <div class="mini-icon"><i class="fa-solid fa-bullseye"></i></div>
+                <div>
+                    <strong>Cụ thể</strong>
+                    <p>Đưa ra thông tin chi tiết, rõ ràng</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="golden-box">
+            <div class="golden-row">
+                <div class="mini-icon"><i class="fa-solid fa-list"></i></div>
+                <div>
+                    <strong>Có cấu trúc</strong>
+                    <p>Sắp xếp yêu cầu theo thứ tự logic</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="golden-box">
+            <div class="golden-row">
+                <div class="mini-icon"><i class="fa-solid fa-chart-line"></i></div>
+                <div>
+                    <strong>Định lượng</strong>
+                    <p>Nêu rõ số lượng, thời gian, tỷ lệ</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="golden-box">
+            <div class="golden-row">
+                <div class="mini-icon"><i class="fa-solid fa-flag"></i></div>
+                <div>
+                    <strong>Có mục tiêu</strong>
+                    <p>Xác định rõ kết quả mong muốn</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="quiz-guide-section">
+
+    <div class="quiz-heading">
+        <div class="quiz-small">Hướng Dẫn Thực Hành</div>
+        <div class="quiz-big">Cách Yêu Cầu Tạo Câu Hỏi Trắc Nghiệm</div>
+        <p>
+            Để AI tạo câu hỏi trắc nghiệm chất lượng, bạn cần cung cấp đầy đủ thông tin 
+            về môn học, lớp, chủ đề và yêu cầu cụ thể. Prompt càng chi tiết, kết quả càng chính xác.
+        </p>
+    </div>
+
+    <div class="quiz-grid">
+
+        <!-- PHẦN 1 -->
+        <div class="quiz-box">
+            <h3>Phần 1: Thông Tin Câu Hỏi</h3>
+
+            <ul>
+                <li><i class="fa-solid fa-book"></i> <strong>Môn học:</strong> Xác định rõ môn học cần ôn tập</li>
+                <li><i class="fa-solid fa-user-graduate"></i> <strong>Lớp học:</strong> Đảm bảo độ khó phù hợp với trình độ</li>
+                <li><i class="fa-solid fa-bullseye"></i> <strong>Chủ đề cụ thể:</strong> Thu hẹp phạm vi kiến thức cần kiểm tra</li>
+                <li><i class="fa-solid fa-list-ol"></i> <strong>Số lượng câu hỏi:</strong> Quy định số câu cần tạo</li>
+                <li><i class="fa-solid fa-signal"></i> <strong>Độ khó:</strong> Dễ, trung bình, khó hoặc hỗn hợp</li>
+                <li><i class="fa-solid fa-check-circle"></i> <strong>Định dạng đáp án:</strong> Số lượng lựa chọn và cách trình bày</li>
+            </ul>
+        </div>
+
+        <!-- PHẦN 2 -->
+        <div class="quiz-box">
+            <h3>Phần 2: Kế Hoạch Học Tập</h3>
+
+            <ul>
+                <li><i class="fa-solid fa-flag"></i> Mục tiêu học tập là gì?</li>
+                <li><i class="fa-solid fa-clock"></i> Thời gian bạn có bao lâu?</li>
+                <li><i class="fa-solid fa-chart-line"></i> Trình độ hiện tại?</li>
+                <li><i class="fa-solid fa-calendar"></i> Mỗi ngày học được bao nhiêu giờ?</li>
+                <li><i class="fa-solid fa-lightbulb"></i> Muốn học theo kiểu nào? (chi tiết / ngắn gọn / có bài tập / có kiểm tra…)</li>
+            </ul>
+            </div>
+
+</section>
+
+<section class="example-section">
+
+
+    <div class="example-heading">
+        <div class="example-small">Ví dụ thực tế</div>
+        <div class="example-big">Prompt Mẫu Hoàn Chỉnh</div>
+    </div>
+
+    <div class="example-card">
+
+        <div class="example-card-header">
+            <span>📋 Prompt Template</span>
+            <button class="copy-btn" id="copyBtn" onclick="copyPrompt()">
+                Sao chép
+            </button>
+        </div>
+
+        <div class="code-area">
+<pre id="promptText"><b>Yêu cầu:</b>
+Hãy tạo 10 câu hỏi trắc nghiệm môn Toán lớp 10 
+chủ đề: Hàm số bậc nhất.
+
+<b>Thông số bài tập:</b>
+- Mức độ: 6 câu trung bình, 4 câu khó
+- Mỗi câu có 4 đáp án (A, B, C, D)
+- Chỉ có 1 đáp án đúng
+- Sau mỗi câu ghi rõ đáp án đúng
+
+<b>Thông tin cá nhân:</b>
+- Mục tiêu học tập: Ôn tập kiểm tra 45 phút
+- Thời gian còn lại: 2 tuần
+- Trình độ hiện tại: Trung bình khá
+- Thời gian học mỗi ngày: 1,5 giờ
+- Phong cách mong muốn: Có bài tập + kiểm tra cuối tuần
+
+<b>Yêu cầu đầu ra:</b>
+Thiết kế kế hoạch học tập phù hợp với thông tin trên.
+</pre>
+        </div>
+    </div>
+
+</section>
+</div>
+<script>
+function copyPrompt(){
+    const text = document.getElementById("promptText").innerText;
+    const btn = document.getElementById("copyBtn");
+
+    navigator.clipboard.writeText(text).then(() => {
+        btn.innerHTML = "✓ Đã sao chép";
+        btn.style.background = "#6FCF97";
+        btn.style.color = "#fff";
+
+        setTimeout(() => {
+            btn.innerHTML = "Sao chép";
+            btn.style.background = "#ffffff";
+            btn.style.color = "#004AAD";
+        }, 2000);
+    });
+}
+</script>
+
+<section class="grading-section">
+
+    <div class="example-heading">
+        <div class="example-small">Ứng dụng nâng cao</div>
+        <div class="example-big">Cách Yêu Cầu Chấm Điểm và Phân Tích</div>
+        <p class="grading-desc">
+            AI có thể chấm điểm bài làm của bạn và đưa ra phân tích chi tiết về những lỗi sai,
+            giúp bạn hiểu rõ điểm yếu và cách cải thiện.
+        </p>
+    </div>
+
+    <div class="example-card grading-card">
+
+        <div class="example-card-header grading-header">
+            <span>📝 Prompt Chấm Điểm</span>
+            <button class="copy-btn" id="copyBtn2" onclick="copyPrompt2()">
+                Sao chép
+            </button>
+        </div>
+
+        <div class="code-area">
+<pre id="promptText2"><b>Yêu cầu:</b>
+Hãy chấm điểm bài làm của tôi và phân tích chi tiết.
+
+<b>Đáp án của tôi:</b>
+Câu 1: A
+Câu 2: C
+Câu 3: B
+Câu 4: D
+Câu 5: A
+
+<b>Các yêu cầu cụ thể:</b>
+1. Cho biết số câu đúng / tổng số câu
+2. Tính điểm theo thang 10
+3. Liệt kê các câu sai
+4. Giải thích tại sao sai và đáp án đúng là gì
+5. Phân tích điểm yếu kiến thức cần cải thiện
+6. Đưa ra lời khuyên học tập cụ thể
+
+<b>Yêu cầu đầu ra:</b>
+Trình bày rõ ràng, có cấu trúc và dễ hiểu.</pre>
+        </div>
+    </div>
+</section>
+<script>
+function copyPrompt2(){
+    const text = document.getElementById("promptText2").innerText;
+    const btn = document.getElementById("copyBtn2");
+
+    navigator.clipboard.writeText(text).then(() => {
+        btn.innerHTML = "✓ Đã sao chép";
+        btn.style.background = "#6FCF97";
+        btn.style.color = "#fff";
+
+        setTimeout(() => {
+            btn.innerHTML = "Sao chép";
+            btn.style.background = "#ffffff";
+            btn.style.color = "#004AAD";
+        }, 2000);
+    });
+}
+</script>
+
+<div class="grading-mini-container">
+    <div class="grading-mini-box">Box 1</div>
+    <div class="grading-mini-box">Box 2</div>
+    <div class="grading-mini-box">Box 3</div>
+    <div class="grading-mini-box">Box 4</div>
+</div>
 
 </div>
 </body>
 </html>
+
