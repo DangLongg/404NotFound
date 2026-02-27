@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giáo dục Việt Nam</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600&display=swap&subset=vietnamese" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<style>
+html{
+    scroll-behavior:smooth;
+}
+body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    background:#F3F6FB;
+}
+
+/* ===== ẢNH NỀN ===== */
+body::after{
+    content:"";
+    position:absolute;
+    top:0;
+    right:0;
+    width:45%;
+    height:80%;
+    background:url("students.png") no-repeat center right/cover;
+    z-index:-2;
+}
+body::before{
+    content:"";
+    position:absolute;
+    top:0;
+    right:0;
+    width:45%;
+    height:80%;
+    background:rgba(255,255,255,0.08);
+    z-index:-1;
+}
+
+/* ===== HEADER ===== */
+.header{
+    position:fixed;
+    top:0;
+    width:100%;
+    backdrop-filter:blur(10px);
+    background:rgba(255,255,255,0.78);
+    box-shadow:0 6px 20px rgba(0,0,0,0.08);
+    z-index:1000;
+}
+.header-inner{
+    width:84%;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 0;
+}
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-family:Impact, sans-serif;
+    font-size:28px;
+}
+.logo img{height:34px;}
+
+.top-menu{
+    display:flex;
+    gap:28px;
+    font-size:18px;
+}
+.top-menu a{
+    text-decoration:none;
+    color:#222;
+    padding:8px 16px;
+    border-radius:10px;
+    transition:.3s;
+}
+.top-menu a:hover{
+    background:#6FCF97;
+    color:#fff;
+    transform:translateY(-2px);
+    box-shadow:0 8px 18px rgba(111,207,151,.45);
+}
+
+/* ===== HERO ===== */
+.hero-text{
+    padding-top:140px;
+    margin-left:8%;
+    max-width:640px;
+}
+.main-line{
+    font-family:'Anton';
+    font-size:56px;
+    letter-spacing:2px;
+}
+.sub-line{
+    font-size:30px;
+    color:#6FCF97;
+    margin:16px 0;
+}
+.description{
+    font-size:19px;
+    line-height:1.7;
+    color:#333;
+}
+
+/* ===== BOXES ===== */
+.info-boxes{
+    margin-left:8%;
+    margin-top:40px;
+    display:flex;
+    gap:26px;
+}
+.box{
+    width:300px;
+    padding:24px;
+    border-radius:12px;
+    background:#fff;
+    box-shadow:0 14px 36px rgba(0,0,0,0.14);
+}
+.highlight{
+    font-family:'Anton';
+    font-size:40px;
+    color:#6FCF97;
+}
+.box-title{
+    font-family:'Anton';
+    font-size:28px;
+    color:#6FCF97;
+}
+
+/* ===== SECTION 2 ===== */
+.section-2{
+    margin:180px 8% 0;
+    scroll-margin-top:120px;
+}
+.small-title{opacity:.8;}
+.big-title{
+    font-family:'Anton';
+    font-size:68px;
+    letter-spacing:3px;
+}
+.medium-title{
+    font-size:34px;
+    color:#6FCF97;
+    font-weight:600;
+}
+
+/* ===== GALLERY ===== */
+.gallery{
+    margin:60px 8% 10px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+}
+.gallery img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+    transition:.35s;
+}
+.gallery img:hover{
+    transform:translateY(-8px) scale(1.05);
+    box-shadow:0 18px 35px rgba(0,0,0,.25);
+}
+
+/* text dưới ảnh */
+.gallery-text{
+    margin:10px 8% 80px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+    text-align:center;
+}
+.percent{
+    font-family:'Anton';
+    font-size:44px;
+    color:#e53935;
+}
+.gallery-text p{
+    font-size:15px;
+    color:#444;
+    line-height:1.6;
+}
+
+/* ===== LIMITATION ===== */
+.limitation-section{
+    display:flex;
+    justify-content:space-between;
+    gap:60px;
+    margin:120px 8%;
+    scroll-margin-top:120px;
+}
+.limitation-left div{
+    font-family:'Anton';
+    font-size:64px;
+    color:#444;
+    line-height:1.05;
+}
+.limitation-right{
+    font-size:20px;
+    line-height:1.9;
+    color:#333;
+}
+
+/* ===== IMAGE CARDS ===== */
+.image-cards{
+    margin:40px 8% 120px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:36px;
+}
+.card:nth-child(1){ transform:translateY(0); }
+.card:nth-child(2){ transform:translateY(45px); }
+.card:nth-child(3){ transform:translateY(90px); }
+
+.card{
+    display:flex;
+    flex-direction:column;
+    transition:.35s;
+    position:relative;
+}
+.card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(135deg,#6FCF97,#56CCF2);
+    opacity:0;
+    filter:blur(40px);
+    transition:.4s;
+    z-index:-1;
+}
+.card:hover::before{opacity:.35;}
+
+.card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    border-radius:22px 22px 0 0;
+    box-shadow:0 12px 28px rgba(0,0,0,.18);
+    transition:.4s;
+}
+.card-box{
+    background:#fff;
+    padding:26px 24px 28px;
+    border-radius:0 0 16px 16px;
+    box-shadow:0 10px 22px rgba(0,0,0,.12);
+}
+.card-box h3{
+    font-family:'Anton';
+    font-size:28px;
+    letter-spacing:1px;
+    margin-bottom:10px;
+}
+.card-box p{
+    color:#444;
+    line-height:1.7;
+    font-size:15.5px;
+}
+.card:hover{transform:translateY(-10px) scale(1.02);}
+.card:hover img{
+    transform:scale(1.08);
+    filter:brightness(1.05);
+    box-shadow:0 20px 40px rgba(0,0,0,.28);
+}
+.card:hover .card-box{
+    box-shadow:0 16px 30px rgba(0,0,0,.18);
+}
+
+/* ===== IMG9 FULL SECTION ===== */
+
+.img9-section{
+    position:relative;
+    width:100%;
+    height:85vh;
+    margin-top:300px;
+    overflow:hidden;
+}
+
+.img9-section img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* lớp phủ blur tối */
+.img9-section::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.35);
+    backdrop-filter:blur(6px);
+}
+
+/* chữ trên ảnh */
+.img9-text{
+    position:absolute;
+    top:90px;
+    left:80px;
+    color:#fff;
+    font-family:'Anton';
+    font-size:80px;
+    line-height:1.05;
+    z-index:2;
+}
+
+/* box khám phá */
+.discover-box{
+    position:absolute;
+    top:70%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    display:flex;
+    align-items:center;
+    gap:14px;
+    background:#fff;
+    padding:16px 28px;
+    border-radius:40px;
+    font-size:18px;
+    color:#000;
+    box-shadow:0 12px 28px rgba(0,0,0,.25);
+    z-index:2;
+}
+
+.arrow-circle{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:#000;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* ===== SOLUTION HEADING ===== */
+
+.solution-heading{
+    text-align:center;
+    margin:90px 0 20px;
+}
+
+.solution-heading .small{
+    font-size:18px;
+    color:#7F8591;
+}
+
+.solution-heading .big{
+    font-family:'Anton';
+    font-size:80px;
+    letter-spacing:2px;
+    margin:8px 0;
+}
+
+.solution-heading .medium{
+    font-size:42px;
+    color:#6FCF97;
+    font-weight:400;
+}
+
+/* mô tả */
+.solution-desc{
+    max-width:800px;
+    margin:10px auto 0;
+    text-align:center;
+    font-size:18px;
+    line-height:1.8;
+    color:#545E6B;
+}
+
+/* ===== FEATURES ===== */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:40px;
+    max-width:1200px;
+    margin:70px auto 100px;
+}
+
+/* box */
+.feature-box{
+    background:#fff;
+    padding:70px 40px 30px;
+    border-radius:22px;
+    text-align:left;
+    box-shadow:0 15px 35px rgba(0,0,0,0.08);
+    transition:.3s;
+    position:relative;
+    cursor:pointer;
+}
+
+.feature-box:hover{
+    transform:translateY(-12px);
+    box-shadow:0 25px 50px rgba(0,0,0,0.15);
+}
+
+/* icon góc trái */
+.icon-box{
+    position:absolute;
+    top:22px;
+    left:22px;
+    width:60px;
+    height:60px;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-size:24px;
+}
+
+.icon-blue{ background:#56CCF2; }
+.icon-orange{ background:#F2994A; }
+.icon-green{ background:#27AE60; }
+
+.feature-box h3{
+    font-family:'Anton';
+    font-size:26px;
+    margin-top:40px;
+    margin-bottom:10px;
+	font-weight:400;
+}
+
+.feature-box p{
+    font-size:16px;
+    line-height:1.6;
+    color:#555;
+}
+
+/* icon sáng khi hover */
+.feature-box:hover .icon-box{
+    transform: scale(1.15);
+    filter: brightness(1.2);
+    box-shadow: 0 0 18px rgba(0,0,0,0.15),
+                0 0 25px currentColor;
+}
+
+.icon-box{
+    transition: 0.35s ease;
+}
+.feature-box:hover .icon-blue{
+    box-shadow:0 0 20px #56CCF2;
+}
+
+.feature-box:hover .icon-orange{
+    box-shadow:0 0 20px #F2994A;
+}
+
+.feature-box:hover .icon-green{
+    box-shadow:0 0 20px #27AE60;
+}
+
+.feature-title{
+    text-align:center;
+    margin:120px 0 40px;
+}
+
+/* box nhỏ phía trên */
+.feature-title .tag{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:'Inter',sans-serif;
+    font-size:14px;
+    color:#00A8A8;
+    background:#E8F8F5;
+    padding:6px 18px;
+    border-radius:20px;
+    margin-bottom:12px;
+}
+
+/* chữ lớn */
+.feature-title .main{
+    font-family:'Anton';
+    font-size:72px;
+    letter-spacing:2px;
+}
+
+/* chữ dưới */
+.feature-title .sub{
+    font-family:'Inter',sans-serif;
+    font-size:34px;
+    color:#00A8A8;
+    letter-spacing:3px;
+    margin-top:6px;
+}
+
+
+/* icon */
+.feature-title .tag i{
+    font-size:13px;
+}
+
+#giaiphap{
+    scroll-margin-top:200px;
+}
+
+#chucnang{
+    scroll-margin-top:120px;
+}
+#loiich{
+	scroll-margin-top:100px;
+}
+/* ===== BENEFIT BIG SECTION ===== */
+
+.benefit-section{
+    max-width:1400px;   /* rộng hơn */
+    margin:140px auto 180px;
+    display:flex;
+    flex-direction:column;
+    gap:70px;
+}
+
+/* BOX LỚN */
+.benefit-box{
+    border-radius:32px;
+    padding:80px 70px 70px 160px; /* to hơn */
+    position:relative;
+    box-shadow:0 30px 70px rgba(0,0,0,0.08);
+    transition:.4s;
+}
+
+/* icon lớn góc trái */
+.benefit-icon{
+    position:absolute;
+    left:55px;
+    top:65px;
+    width:85px;
+    height:85px;
+    border-radius:22px;
+}
+
+/* màu nền */
+.purple{ background:#F1E9FF; }
+.purple .benefit-icon{ background:#8E44AD; }
+
+.blue{ background:#E8F4FF; }
+.blue .benefit-icon{ background:#2F80ED; }
+
+.teal{ background:#E6FAF7; }
+.teal .benefit-icon{ background:#00A8A8; }
+
+.orange{ background:#FFF1E6; }
+.orange .benefit-icon{ background:#F2994A; }
+
+/* MINI BOX CONTAINER */
+.mini-boxes{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+    margin-top:15px;
+}
+
+/* BOX 3: chia đều 2 bên */
+.mini-boxes.four{
+    grid-template-columns:repeat(2, 1fr);
+}
+
+/* MINI BOX */
+.mini-box{
+    background:white;
+    border-radius:14px;
+    padding:14px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    box-shadow:0 6px 14px rgba(0,0,0,0.08);
+    font-size:14px;
+    font-weight:500;
+}
+
+.mini-text{
+    line-height:1.3;
+}
+
+/* icon trong mini box */
+.mini-icon{
+    width:46px;
+    height:46px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-size:18px;
+    flex-shrink:0;
+}
+
+/* hover nổi + glow */
+.benefit-box:hover{
+    transform:translateY(-16px);
+    box-shadow:0 45px 90px rgba(0,0,0,0.18);
+}
+
+.purple:hover{ box-shadow:0 40px 90px rgba(142,68,173,.35); }
+.blue:hover{ box-shadow:0 40px 90px rgba(47,128,237,.35); }
+.teal:hover{ box-shadow:0 40px 90px rgba(0,168,168,.35); }
+.orange:hover{ box-shadow:0 40px 90px rgba(242,153,74,.35); }
+
+/* icon lớn góc trái */
+.benefit-icon{
+    position:absolute;
+    left:55px;
+    top:65px;
+    width:90px;
+    height:90px;
+    border-radius:22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;          /* icon màu trắng */
+    font-size:34px;      /* kích thước icon */
+}
+
+.mini-boxes.five{
+    grid-template-columns:repeat(3,1fr);
+}
+/* 3 box nhỏ */
+.mini-boxes.three{
+    grid-template-columns:repeat(3,1fr);
+}
+
+/* box 3 chia 2 trên 2 dưới */
+.mini-boxes.four{
+    grid-template-columns:repeat(2,1fr);
+}
+
+/* icon trong mini box */
+.mini-icon{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-size:20px;
+}
+
+.purple .mini-icon{ background:#8E44AD; }
+.blue .mini-icon{ background:#2F80ED; }
+.teal .mini-icon{ background:#00A8A8; }
+.orange .mini-icon{ background:#F2994A; }
+
+.benefit-title{
+    font-family:'Anton', sans-serif;
+    font-size:34px;
+    margin-bottom:6px;
+}
+
+.benefit-desc{
+    font-size:17px;
+    color:#444;
+    margin-bottom:26px;
+    line-height:1.6;
+}
+
+/* ===== IMPACT TITLE ===== */
+
+.impact-title{
+    text-align:center;
+    margin:160px 0 60px;
+}
+
+/* box cam nhạt */
+.impact-label{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:#FFF2E6;
+    color:#A65E2E;
+    padding:8px 18px;
+    border-radius:20px;
+    font-size:16px;
+    font-family:'Inter',sans-serif;
+    margin-bottom:14px;
+}
+
+/* icon sao rỗng */
+.impact-label i{
+    color:#F2994A;
+    font-size:14px;
+}
+
+/* tiêu đề lớn */
+.impact-title .big{
+    font-family:'Anton';
+    font-size:78px;
+    letter-spacing:2px;
+}
+
+/* dòng dưới */
+.impact-title .medium{
+    font-size:34px;
+    color:#6FCF97;
+    margin-top:6px;
+}
+
+/* ===== IMPACT GRID ===== */
+
+.impact-grid{
+    max-width:1300px;
+    margin:40px auto 120px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:34px;
+}
+
+/* BOX */
+.impact-box{
+    padding:44px 36px 42px 100px;
+    border-radius:22px;
+    font-size:19px;
+    line-height:1.65;
+    position:relative;
+    transition:.35s;
+    cursor:pointer;
+    min-height:140px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.08);
+}
+
+/* ICON */
+.impact-icon{
+    position:absolute;
+    left:28px;
+    top:30px;
+    width:58px;
+    height:58px;
+    border-radius:16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-size:22px;
+}
+
+/* màu từng box */
+.impact-box:nth-child(1){background:#EAF7EF;}
+.impact-box:nth-child(1) .impact-icon{background:#27AE60;}
+
+.impact-box:nth-child(2){background:#FFF4E8;}
+.impact-box:nth-child(2) .impact-icon{background:#F2994A;}
+
+.impact-box:nth-child(3){background:#FFEDEE;}
+.impact-box:nth-child(3) .impact-icon{background:#EB5757;}
+
+.impact-box:nth-child(4){background:#EAF2FF;}
+.impact-box:nth-child(4) .impact-icon{background:#2F80ED;}
+
+.impact-box:nth-child(5){background:#F3ECFF;}
+.impact-box:nth-child(5) .impact-icon{background:#8E44AD;}
+
+.impact-box:nth-child(6){background:#FFF8E3;}
+.impact-box:nth-child(6) .impact-icon{background:#F2C94C;}
+
+.impact-box:hover{
+    transform:translateY(-10px);
+    box-shadow:0 25px 55px rgba(0,0,0,0.15);
+}
+
+.impact-box h3{
+    margin:0 0 8px;
+    font-size:22px;
+    font-weight:700;
+}
+
+.impact-box p{
+    margin:0;
+    font-size:17px;
+    line-height:1.6;
+    color:#444;
+}
+#topBtn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: white;
+  cursor: pointer;
+  padding: 12px 15px;
+  border-radius: 50%;
+  display: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+#topBtn:hover {
+  transform: scale(1.1);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:900px){
+    .img9-text{font-size:48px; left:30px;}
+    .features{grid-template-columns:1fr;}
+
+    .gallery,
+    .gallery-text{grid-template-columns:1fr 1fr;}
+
+    .limitation-section{flex-direction:column;}
+
+    .image-cards{grid-template-columns:1fr;}
+
+    .card:nth-child(2),
+    .card:nth-child(3){transform:none;}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <img src="logo.png">
+      <span>404 Not Found</span>
+    </div>
+    <div class="top-menu">
+      <a href="#numbers">Bối cảnh</a>
+      <a href="#challenges">Thách thức</a>
+      <a href="#giaiphap">Giải pháp</a>
+      <a href="#chucnang">Chức năng</a>
+      <a href="#loiich">Lợi ích</a>
+    </div>
+  </div>
+</div>
+
+<div class="hero-text">
+  <div class="main-line">GIÁO DỤC VIỆT NAM</div>
+  <div class="sub-line">trong Kỷ Nguyên AI</div>
+  <div class="main-line">CÁ NHÂN HÓA HỌC TẬP</div>
+  <div class="description">
+    Trong thời đại trí tuệ nhân tạo và công nghệ phát triển mạnh mẽ,<br>
+    học tập trở thành chìa khóa giúp mỗi cá nhân đạt được thành công<br>
+    và mục tiêu của mình.
+  </div>
+</div>
+
+<div class="info-boxes">
+  <div class="box">
+    <div class="highlight">85%</div>
+    <p>Học sinh cảm thấy áp lực với chương trình học đồng loạt</p>
+  </div>
+  <div class="box">
+    <div class="box-title">THẾ HỆ Z CẦN GÌ?</div>
+    <p>Giáo dục linh hoạt, phù hợp với khả năng và đam mê cá nhân</p>
+  </div>
+</div>
+
+<div class="section-2" id="numbers">
+  <div class="small-title">Thực trạng giáo dục</div>
+  <div class="big-title">NHỮNG CON SỐ</div>
+  <div class="medium-title">Đáng Suy Ngẫm</div>
+</div>
+
+<div class="gallery">
+  <img src="img1.png">
+  <img src="img2.png">
+  <img src="img3.png">
+  <img src="img4.png">
+</div>
+
+<div class="gallery-text">
+  <div><div class="percent">85%</div><p>học sinh cảm thấy áp lực với<br>chương trình học đồng loạt</p></div>
+  <div><div class="percent">72%</div><p>học sinh không được học theo<br>cách phù hợp với bản thân</p></div>
+  <div><div class="percent">68%</div><p>thiếu hụt cá nhân hóa trong<br>phương pháp giảng dạy</p></div>
+  <div><div class="percent">79%</div><p>học sinh mất động lực học tập do<br>áp lực và căng thẳng</p></div>
+</div>
+
+<div class="limitation-section" id="challenges">
+  <div class="limitation-left">
+    <div>Hạn Chế Của</div>
+    <div>Hệ Thống Hiện Tại</div>
+  </div>
+  <div class="limitation-right">
+    Dù xã hội phát triển, hệ thống giáo dục Việt Nam<br>
+    vẫn còn nặng tính truyền thống và đồng loạt. Học<br>
+    sinh trong cùng một lớp được học chung một chương trình,<br>
+    trong khi mỗi người có khả năng và điều kiện khác nhau.
+  </div>
+</div>
+
+<div class="image-cards">
+
+  <div class="card">
+    <img src="img5.png">
+    <div class="card-box">
+      <h3>ÁP LỰC ĐỒNG LOẠT</h3>
+      <p>
+        Chương trình học chung cho tất cả học<br>
+        sinh tạo áp lực lớn, không phù hợp với khả<br>
+        năng và tốc độ học tập khác nhau của mỗi<br>
+        em.
+      </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="img6.png">
+    <div class="card-box">
+      <h3>MỘT SIZE CHO TẤT CẢ</h3>
+      <p>
+        Việc cá nhân hóa học tập khó thực hiện<br>
+        khi mọi học sinh phải theo cùng một lộ<br>
+        trình và phương pháp giảng dạy.
+      </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="img7.png">
+    <div class="card-box">
+      <h3>MẤT ĐỘNG LỰC</h3>
+      <p>
+        Áp lực và căng thẳng từ hệ thống giáo dục<br>
+        đồng loạt dễ làm giảm động lực học tập<br>
+        và niềm đam mê khám phá của học sinh.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="img9-section">
+  <img src="img9.png">
+
+  <div class="img9-text">
+    THAY ĐỔI BẮT ĐẦU<br>
+    TỪ NHẬN THỨC
+  </div>
+
+  <a href="#giaiphap" class="discover-box">
+    KHÁM PHÁ GIẢI PHÁP
+    <div class="arrow-circle">↓</div>
+</a>
+
+</div>
+
+<div class="solution-heading" id="giaiphap">
+  <div class="small">Giải Pháp Của Chúng Tôi</div>
+  <div class="big">HỆ THỐNG HỌC TẬP</div>
+  <div class="medium">Cá Nhân Hóa Bằng AI</div>
+</div>
+
+<p class="solution-desc">
+Chúng tôi đề xuất xây dựng một hệ thống học tập cá nhân hóa ứng dụng trí tuệ nhân tạo
+như ChatGPT để phân tích phong cách học và đề xuất phương pháp học phù hợp cho
+từng học sinh.
+</p>
+
+<div class="features">
+
+    <div class="feature-box">
+        <div class="icon-box icon-blue">
+            <i class="fa-solid fa-brain"></i>
+        </div>
+        <h3>Phân tích phong cách học</h3>
+        <p>AI nhận diện cách tiếp thu tốt nhất của từng học sinh.</p>
+    </div>
+
+    <div class="feature-box">
+        <div class="icon-box icon-orange">
+            <i class="fa-solid fa-rocket"></i>
+        </div>
+        <h3>Đề xuất phương pháp học</h3>
+        <p>Gợi ý cách học phù hợp giúp tiếp thu hiệu quả hơn.</p>
+    </div>
+
+    <div class="feature-box">
+        <div class="icon-box icon-green">
+            <i class="fa-solid fa-heart"></i>
+        </div>
+        <h3>Theo dõi tiến độ thông minh</h3>
+        <p>Phân tích kết quả học tập và điều chỉnh lộ trình.</p>
+    </div>
+</div>
+
+<div class="feature-title" id="chucnang">
+    <div class="tag">
+        <i class="fa-solid fa-gear"></i>
+        Chức Năng Chính
+    </div>
+
+    <div class="main">TÍNH NĂNG</div>
+    <div class="sub">Vượt Trội</div>
+</div>
+
+<div class="benefit-section">
+
+<!-- BOX 1 -->
+<div class="benefit-box purple">
+    <div class="benefit-icon">
+        <i class="fa-solid fa-brain"></i>
+    </div>
+
+    <div class="benefit-title">
+        1. KHẢO SÁT & ĐÁNH GIÁ NGƯỜI HỌC
+    </div>
+    <div class="benefit-desc">
+        Học sinh thực hiện các câu hỏi trắc nghiệm để xác định:
+    </div>
+
+    <div class="mini-boxes three">
+        <div class="mini-box">
+            <div class="mini-icon"><i class="fa-solid fa-book"></i></div>
+            Phong cách học tập
+        </div>
+
+        <div class="mini-box">
+            <div class="mini-icon"><i class="fa-solid fa-user"></i></div>
+            Tính cách & khả năng tập trung
+        </div>
+
+        <div class="mini-box">
+            <div class="mini-icon"><i class="fa-solid fa-chart-line"></i></div>
+            Mức độ tiếp thu kiến thức
+        </div>
+    </div>
+</div>
+
+<!-- BOX 2 -->
+<div class="benefit-box blue">
+    <div class="benefit-icon">
+        <i class="fa-solid fa-chart-column"></i>
+    </div>
+
+    <div class="benefit-title">
+        2. PHÂN TÍCH BẰNG TRÍ TUỆ NHÂN TẠO
+    </div>
+    <div class="benefit-desc">
+        AI xử lý dữ liệu để:
+    </div>
+
+    <div class="mini-boxes three">
+        <div class="mini-box">
+            <div class="mini-icon"><i class="fa-solid fa-compass"></i></div>
+            Xác định cách học phù hợp
+        </div>
+
+        <div class="mini-box">
+            <div class="mini-icon"><i class="fa-solid fa-crosshairs"></i></div>
+            Nhận diện điểm mạnh & điểm cần cải thiện
+        </div>
+
+        <div class="mini-box">
+            <div class="mini-icon"><i class="fa-solid fa-file-lines"></i></div>
+            Xây dựng hồ sơ học tập cá nhân
+        </div>
+    </div>
+</div>
+
+<!-- BOX 3 -->
+<div class="benefit-box teal">
+    <div class="benefit-icon">
+        <i class="fa-solid fa-location-arrow"></i>
+    </div>
+
+    <div class="benefit-title">
+        3. ĐỀ XUẤT PHƯƠNG PHÁP HỌC CÁ NHÂN HÓA
+    </div>
+    <div class="benefit-desc">
+        Hệ thống gợi ý:
+    </div>
+
+    <div class="mini-boxes four">
+        <div class="mini-box">
+            <div class="mini-icon"><i class="fa-solid fa-lightbulb"></i></div>
+            Phương pháp học hiệu quả nhất
+        </div>
+
+        <div class="mini-box">
+            <div class="mini-icon"><i class="fa-solid fa-map"></i></div>
+            Lộ trình học theo năng lực
+        </div>
+
+        <div class="mini-box">
+            <div class="mini-icon"><i class="fa-solid fa-file-lines"></i></div>
+            Tài liệu & bài tập phù hợp
+        </div>
+
+        <div class="mini-box">
+            <div class="mini-icon"><i class="fa-solid fa-clock"></i></div>
+            Thời gian học tối ưu
+        </div>
+    </div>
+</div>
+
+<!-- BOX 4 -->
+<div class="benefit-box orange">
+    <div class="benefit-icon">
+        <i class="fa-solid fa-chart-line"></i>
+    </div>
+
+    <div class="benefit-title">
+        4. THEO DÕI TIẾN ĐỘ & ĐIỀU CHỈNH
+    </div>
+    <div class="benefit-desc">
+        Hệ thống liên tục cập nhật
+    </div>
+
+    <div class="mini-boxes three">
+        <div class="mini-box">
+            <div class="mini-icon"><i class="fa-solid fa-trophy"></i></div>
+            Đánh giá sự tiến bộ theo thời gian
+        </div>
+
+        <div class="mini-box">
+            <div class="mini-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+            Điều chỉnh lộ trình học khi cần
+        </div>
+
+        <div class="mini-box">
+            <div class="mini-icon"><i class="fa-solid fa-comments"></i></div>
+            Cung cấp phản hồi giúp cải thiện
+        </div>
+    </div>
+</div>
+
+<!-- ===== POSITIVE IMPACT SECTION ===== -->
+
+<div class="impact-title" id="loiich">
+
+    <div class="impact-label">
+        <i class="fa-regular fa-star"></i>
+        Lợi Ích Mang Lại
+    </div>
+
+    <div class="big">THAY ĐỔI TÍCH CỰC</div>
+    <div class="medium">Cho Học Sinh</div>
+
+</div>
+
+<div class="impact-grid">
+
+    <div class="impact-box">
+        <div class="impact-icon"><i class="fa-solid fa-check"></i></div>
+        <h3>Học Đúng Phương Pháp</h3>
+        <p>Học đúng phương pháp phù hợp với bản thân, tối ưu hóa quá trình tiếp thu kiến thức.</p>
+    </div>
+
+    <div class="impact-box">
+        <div class="impact-icon"><i class="fa-solid fa-fire"></i></div>
+        <h3>Tăng Động Lực</h3>
+        <p>Tăng động lực & hứng thú học tập khi được học theo cách mình yêu thích.</p>
+    </div>
+
+    <div class="impact-box">
+        <div class="impact-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+        <h3>Giảm Căng Thẳng</h3>
+        <p>Giảm căng thẳng, áp lực học đường nhờ lộ trình học phù hợp.</p>
+    </div>
+
+    <div class="impact-box">
+        <div class="impact-icon"><i class="fa-solid fa-rocket"></i></div>
+        <h3>Nâng Cao Hiệu Quả</h3>
+        <p>Nâng cao hiệu quả tiếp thu kiến thức thông qua phương pháp cá nhân hóa.</p>
+    </div>
+
+    <div class="impact-box">
+        <div class="impact-icon"><i class="fa-solid fa-users"></i></div>
+        <h3>Hỗ Trợ Giáo Viên</h3>
+        <p>Hỗ trợ giáo viên theo dõi học sinh hiệu quả hơn với dữ liệu chi tiết.</p>
+    </div>
+
+    <div class="impact-box">
+        <div class="impact-icon"><i class="fa-solid fa-star"></i></div>
+        <h3>Tương Lai Giáo Dục</h3>
+        <p>Bước đầu tiên hướng tới một hệ thống giáo dục hiện đại, nhân văn và hiệu quả.</p>
+    </div>
+
+</div>
+</body>
+</html>
