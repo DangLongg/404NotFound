@@ -1228,122 +1228,749 @@ body::before{
 
 /* ===== TIME LINE ===== */
 
-.study-timeline{
-    max-width:850px;
-    margin:100px auto;
-    padding:0 20px;
+.plan-title{
+    font-size:34px;
+    font-weight:800;
+    background:linear-gradient(90deg,#004AAD,#4F8CFF);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    margin-bottom:12px;
+    opacity:0;
+    transform:translateY(40px);
+    transition:all .8s ease;
 }
 
-.timeline-title{
-    text-align:center;
-    font-size:30px;
-    font-weight:700;
-    margin-bottom:60px;
+.plan-sub{
+    font-size:20px;
+    font-weight:600;
+    color:#004AAD;
+    position:relative;
+    display:inline-block;
+    margin-bottom:15px;
+    opacity:0;
+    transform:translateY(40px);
+    transition:all .8s ease .2s;
+}
+
+.plan-sub::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:100%;
+    height:3px;
+    background:linear-gradient(90deg,#004AAD,#6FCF97);
+    border-radius:2px;
+}
+
+.plan-desc{
+    max-width:700px;
+    margin:0 auto;
+    color:#555;
+    opacity:0;
+    transform:translateY(40px);
+    transition:all .8s ease .4s;
 }
 
 .timeline{
+    width:800px;
+    margin:0 auto;
     position:relative;
-    padding-left:60px;
 }
 
-/* Vertical line */
 .timeline::before{
     content:"";
     position:absolute;
-    left:30px;
+    left:50px;
     top:0;
     width:2px;
     height:100%;
-    background:#E6EEF8;
+    background:#E0E7FF;
 }
 
-/* Each item */
 .timeline-item{
     position:relative;
     margin-bottom:60px;
-    opacity:0;
-    transform:translateY(40px);
-    transition:all .6s ease;
+    padding-left:120px;
 }
 
-/* Icon box */
 .timeline-icon{
     position:absolute;
-    left:-60px;
+    left:20px;
     top:0;
-    width:50px;
-    height:50px;
-    background:#004AAD;
-    border-radius:14px;
+    width:60px;
+    height:60px;
+    background:#DCEBFF;
+    border-radius:16px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:22px;
-    color:#fff;
-    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    font-size:26px;
+    transition:all .35s ease;
+    box-shadow:0 10px 25px rgba(0,74,173,0.15);
 }
 
-/* Card */
 .timeline-content{
     background:#ffffff;
     padding:25px 30px;
     border-radius:18px;
     box-shadow:0 15px 40px rgba(0,0,0,0.06);
-    border:1px solid #F1F5F9;
+    position:relative;
+    overflow:hidden;
+    transition:all .35s ease;
+}
+
+/* Hover nâng card */
+.timeline-item:hover .timeline-content{
+    transform:translateY(-8px);
+    box-shadow:0 25px 60px rgba(0,74,173,0.15);
+}
+
+/* Icon xoay + scale */
+.timeline-item:hover .timeline-icon{
+    transform:rotate(5deg) scale(1.1);
+    box-shadow:0 20px 40px rgba(0,74,173,0.25);
+}
+
+/* Gradient quét */
+.timeline-content::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background:linear-gradient(
+        120deg,
+        transparent 0%,
+        rgba(0,74,173,0.1) 50%,
+        transparent 100%
+    );
+    transition:.6s;
+}
+
+.timeline-item:hover .timeline-content::before{
+    left:100%;
+}
+
+/* Glow light */
+.timeline-content::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:60%;
+    height:100%;
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.4),
+        transparent
+    );
+    transform:skewX(-20deg);
+}
+
+.timeline-item:hover .timeline-content::after{
+    left:130%;
+    transition:.7s;
+}
+
+/* Ripple */
+.ripple{
+    position:absolute;
+    width:20px;
+    height:20px;
+    background:rgba(0,74,173,0.3);
+    border-radius:50%;
+    transform:translate(-50%,-50%);
+    animation:ripple .6s linear;
+}
+
+@keyframes ripple{
+    to{
+        width:400px;
+        height:400px;
+        opacity:0;
+    }
 }
 
 .timeline-content h3{
-    margin-bottom:8px;
+    margin-bottom:10px;
     color:#004AAD;
 }
 
 .timeline-content ul{
     padding-left:18px;
-    margin-top:8px;
+    color:#444;
 }
 
-.timeline-content li{
-    margin-bottom:6px;
+.show{
+    opacity:1 !important;
+    transform:translateY(0) !important;
+}
+
+
+/* === 3 SMALL BOXS === */
+
+
+.feature-boxes{
+    margin-top:100px;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.feature-item{
+    background:#F4F8FF; /* tối hơn trắng 1 chút */
+    padding:25px 25px 25px 60px;
+    width:260px;
+    border-radius:18px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.05);
+    position:relative;
+    transition:all .35s ease;
+}
+
+.feature-item:hover{
+    transform:translateY(-8px);
+    background:#EAF2FF; /* tối thêm khi hover */
+    box-shadow:0 25px 60px rgba(0,74,173,0.18);
+}
+
+.feature-icon{
+    position:absolute;
+    top:20px;
+    left:20px;
+    width:36px;
+    height:36px;
+    background:#EAF3FF;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+    transition:all .3s ease;
+}
+
+.feature-item:hover .feature-icon{
+    transform:scale(1.1);
+    background:#DCEBFF;
+}
+
+.feature-item h4{
+    margin-bottom:8px;
+    color:#004AAD;
+    font-size:18px;
+}
+
+.feature-item p{
+    font-size:14px;
+    color:#555;
+}
+
+/* ===== ADVANCE ===== */
+
+/* ===== ADVANCED SECTION ===== */
+
+.advanced-section{
+    background:#356BE9;
+    padding:100px 20px;
+    color:#fff;
+}
+
+.advanced-wrapper{
+    max-width:1000px;
+    margin:auto;
+    text-align:center;
+}
+
+.advanced-badge{
+    display:inline-block;
+    padding:8px 20px;
+    background:#FFD700;
+    color:#000;
+    border-radius:30px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.advanced-title{
+    font-size:34px;
+    font-weight:800;
+    margin-bottom:15px;
+}
+
+.advanced-desc{
+    max-width:700px;
+    margin:0 auto 60px;
+    opacity:0.9;
+}
+
+/* ===== CARD ===== */
+
+.advanced-card{
+    background:#ffffff;
+    color:#222;
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 30px 80px rgba(0,0,0,0.25);
+    text-align:left;
+}
+
+.advanced-card-header{
+    padding:25px 30px;
+    background:#F4F8FF;
+    font-weight:700;
+}
+
+.advanced-template{
+    padding:30px;
+    font-family:monospace;
+    white-space:pre-wrap;
+    line-height:1.7;
+}
+
+/* Highlight từng mục */
+
+.highlight{
+    background:#EAF0FF;
+    padding:2px 6px;
+    border-radius:4px;
+    color:#356BE9;
+    font-weight:400;
+    font-size:inherit;
+}
+
+/* Điểm nổi bật */
+
+.highlight-section{
+    background:#F5F8FF;
+    padding:30px;
+    border-top:1px solid #E0E6FF;
+}
+
+.highlight-section h4{
+    margin-bottom:15px;
+    color:#356BE9;
+}
+
+.highlight-section ul{
+    list-style:none;
+    padding:0;
+}
+
+.highlight-section li{
+    margin-bottom:10px;
+}
+
+/* ===== TIP BUBBLE ===== */
+
+.tip-box{
+    margin:50px 0 10px 0;
+    padding:28px 30px;
+    border-radius:22px;
+    background:rgba(255,255,255,0.18);
+    backdrop-filter:blur(14px);
+    display:flex;
+    align-items:flex-start;
+    gap:18px;
+    color:#111111;
+    position:relative;
+    transition:all .3s ease;
+    border:1px solid rgba(255,255,255,0.25);
+}
+
+/* Hover effect */
+.tip-box:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Icon vàng */
+.tip-icon{
+    background:#FFD84D;
+    color:#000;
+    font-weight:700;
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    flex-shrink:0;
+    box-shadow:0 8px 20px rgba(255,216,77,0.4);
+}
+
+/* Nội dung */
+.tip-content{
+    flex:1;
+}
+
+/* Tiêu đề */
+.tip-title{
+    font-weight:700;
+    font-size:16px;
+    margin-bottom:8px;
+    letter-spacing:0.3px;
+}
+
+/* Text */
+.tip-text{
     font-size:15px;
+    line-height:1.7;
+    opacity:0.95;
 }
 
-/* Animation active */
-.timeline-item.active{
+/* Nhấn mạnh */
+.tip-text strong{
+    color:#ffffff;
+}
+
+.copy-btn-advanced{
+    padding:8px 18px;
+    border:none;
+    border-radius:8px;
+    background:#ffffff;
+    color:#356BE9;
+    cursor:pointer;
+    font-weight:600;
+    transition:all .3s ease;
+}
+
+.copy-btn-advanced:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+.advanced-card-header{
+    padding:25px 30px;
+    background:#1E2A5A; /* màu tối */
+    color:#fff;
+    font-weight:700;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+/* ===== CODE STYLE ===== */
+
+.advanced-template{
+    padding:30px 30px 30px 60px;
+    font-family:monospace;
+    white-space:pre-wrap;
+    line-height:1.8;
+    counter-reset: line;
+    background:#ffffff;
+}
+
+/* Đánh số dòng */
+.line-numbers{
+    position:relative;
+}
+
+.line-numbers span,
+.line-numbers{
+    display:block;
+}
+
+/* Tạo từng dòng */
+.advanced-template{
+    background-image: linear-gradient(#f0f3ff 1px, transparent 1px);
+    background-size: 100% 32px;
+}
+
+/* Số dòng */
+.advanced-template::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:30px;
+    bottom:30px;
+    width:40px;
+    background:#f7f9ff;
+    border-right:1px solid #e4e8ff;
+}
+.section-line{
+    display:block;
+    background:#EAF0FF;
+    padding:4px 10px;
+    border-radius:6px;
+    font-weight:600;
+    color:#356BE9;
+}
+/* GRID 2 CỘT */
+.highlight-grid{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:20px;
+    margin-top:20px;
+}
+
+/* BOX */
+.highlight-box{
+    background:#ffffff;
+    padding:18px 20px;
+    border-radius:14px;
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    transition:all .3s ease;
+    border:1px solid #E4EBFF;
+}
+
+/* Hover effect nhẹ */
+.highlight-box:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 30px rgba(53,107,233,0.15);
+}
+
+/* Icon */
+.highlight-icon{
+    font-size:18px;
+    margin-top:2px;
+}
+/* SECTION */
+.mistake-section{
+    padding:100px 10%;
+    background:#f6f9ff;
+}
+
+.mistake-title{
+    text-align:center;
+    font-size:32px;
+    font-weight:700;
+    margin-bottom:10px;
+    color:#111;
+}
+
+.mistake-sub{
+    text-align:center;
+    margin-bottom:60px;
+    color:#666;
+}
+
+/* WRAPPER */
+.mistake-wrapper{
+    display:flex;
+    flex-direction:column;
+    gap:40px;
+}
+
+/* CARD */
+.mistake-card{
+    background:#ffffff;
+    border-radius:18px;
+    padding:30px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.05);
+    transition:0.4s;
+}
+
+.mistake-card:hover{
+    transform:translateY(-6px);
+}
+
+/* COMPARE GRID */
+.compare-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+/* WRONG */
+.wrong-box{
+    background:#fff1f1;
+    padding:20px;
+    border-radius:12px;
+    border-left:4px solid #ff4d4d;
+}
+
+.label.wrong{
+    background:#ff4d4d;
+    color:white;
+}
+
+/* CORRECT */
+.correct-box{
+    background:#eef4ff;
+    padding:20px;
+    border-radius:12px;
+    border-left:4px solid #356BE9;
+}
+
+.label.correct{
+    background:#356BE9;
+    color:white;
+}
+
+/* LABEL */
+.label{
+    display:inline-block;
+    padding:4px 10px;
+    border-radius:6px;
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+/* REASON */
+.reason-box{
+    margin-top:20px;
+    background:#f0f3ff;
+    padding:15px 20px;
+    border-radius:10px;
+    font-size:14px;
+    color:#333;
+}
+
+/* SCROLL REVEAL */
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 0.8s ease;
+}
+
+.reveal.active{
     opacity:1;
     transform:translateY(0);
 }
-/* Hover card */
-.timeline-item:hover .timeline-content{
-    transform:translateY(-8px);
-    box-shadow:0 25px 60px rgba(0,74,173,0.15);
-    transition:all .3s ease;
+
+/* SECTION */
+/* ===== SLIDE FULL SCREEN ===== */
+.bne2-section{
+    height:100vh;
+    width:100%;
+    background:#ffffff;
+
+    display:flex;
+    justify-content:center;  /* căn giữa ngang */
+    align-items:center;      /* căn giữa dọc */
 }
 
-/* Hover icon */
-.timeline-item:hover .timeline-icon{
-    transform:scale(1.1);
-    box-shadow:0 15px 35px rgba(0,74,173,0.35);
-    transition:all .3s ease;
+/* CONTAINER */
+.bne2-container{
+    width:100%;
+    max-width:1200px;
+    text-align:center;
+    margin:0 auto;           /* đảm bảo giữa ngang */
 }
 
-/* Smooth transition mặc định */
-.timeline-content{
-    transition:all .3s ease;
+/* ===== TITLES ===== */
+.bne2-title{
+    font-size:14px;
+    letter-spacing:3px;
+    color:#356BE9;
+    margin-bottom:10px;
 }
 
-.timeline-icon{
-    transition:all .3s ease;
+.bne2-subtitle{
+    font-size:34px;
+    font-weight:700;
+    margin-bottom:15px;
 }
 
-/* Làm line sáng hơn khi hover */
-.timeline-item:hover::after{
-    content:"";
-    position:absolute;
-    left:-30px;
-    top:50px;
-    width:2px;
-    height:calc(100% + 10px);
-    background:#BFD8FF;
+.bne2-desc{
+    color:#666;
+    margin-bottom:70px;
+}
+
+/* ===== WRAPPER ===== */
+.bne2-wrapper{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+/* ===== CARD BASE ===== */
+.bne2-card{
+    width:300px;
+    padding:40px 25px;
+    border-radius:20px;
+    transition:all 0.4s ease;
+
+    /* Shadow rõ hơn */
+    box-shadow:0 25px 60px rgba(0,0,0,0.12);
+}
+
+/* ===== 3 MÀU KHÁC NHAU ===== */
+.card-1{
+    background:#eef4ff;
+}
+
+.card-2{
+    background:#f0fdf4;
+}
+
+.card-3{
+    background:#fff7ed;
+}
+
+/* ===== ICON BOX ===== */
+.bne2-icon-box{
+    width:70px;
+    height:70px;
+    margin:0 auto 25px auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    border-radius:16px;
+    transition:all 0.4s ease;
+}
+
+/* Icon theo màu từng card */
+.card-1 .bne2-icon-box{
+    background:#356BE9;
+    color:white;
+}
+
+.card-2 .bne2-icon-box{
+    background:#16a34a;
+    color:white;
+}
+
+.card-3 .bne2-icon-box{
+    background:#ea580c;
+    color:white;
+}
+
+/* ===== HOVER EFFECT ===== */
+.bne2-card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 35px 80px rgba(0,0,0,0.25);
+}
+
+.bne2-card:hover .bne2-icon-box{
+    transform:rotate(-12deg) scale(1.08);
+}
+
+/* ===== TEXT SHADOW ===== */
+.bne2-text{
+    margin-top:15px;
+    color:#444;
+    text-shadow:0 2px 4px rgba(0,0,0,0.08);
+    transition:all 0.4s ease;
+}
+
+/* ===== HOVER EFFECT ===== */
+.bne2-card:hover{
+    background:#356BE9;
+    color:white;
+    transform:translateY(-12px);
+}
+
+.bne2-card:hover h4{
+    color:white;
+}
+
+.bne2-card:hover .bne2-text{
+    color:white;
+    text-shadow:0 6px 14px rgba(0,0,0,0.4);
+}
+
+.bne2-card:hover .bne2-icon-box{
+    background:white;
+    transform:rotate(-12deg) scale(1.05);
 }
 </style>
 </head>
@@ -2065,80 +2692,438 @@ function copyPrompt3(){
 }
 </script>
 
-<section class="study-timeline">
+<div class="plan-header">
+    <div class="icon-box">📅</div>
+    <div class="plan-title">Xây Dựng Lộ Trình Học Tập Cá Nhân Hóa Với AI</div>
+    <div class="plan-sub">Cách Yêu Cầu Lập Kế Hoạch Học Tập</div>
+    <div class="plan-desc">
+        AI có thể tạo lộ trình học tập cá nhân hóa dựa trên mục tiêu,
+        thời gian và điểm yếu của bạn, giúp bạn tối ưu hiệu quả học tập trong thời gian ngắn nhất.
+    </div>
+</div>
 
-    <h2 class="timeline-title">Ví dụ Lộ Trình Học Tập</h2>
+<div class="timeline">
 
-    <div class="timeline">
+    <div class="timeline-item">
+        <div class="timeline-icon">📘</div>
+        <div class="timeline-content">
+            <h3>Tuần 1-2 — Củng cố nền tảng</h3>
+            <ul>
+                <li>Ôn lại lý thuyết cơ bản</li>
+                <li>Làm bài tập dễ đến trung bình</li>
+                <li>Xác định điểm yếu cụ thể</li>
+            </ul>
+        </div>
+    </div>
 
-        <div class="timeline-item">
-            <div class="timeline-icon">📘</div>
-            <div class="timeline-content">
-                <h3>Tuần 1-2</h3>
-                <p><strong>Củng cố nền tảng</strong></p>
-                <ul>
-                    <li>Ôn lại lý thuyết cơ bản</li>
-                    <li>Làm bài tập dễ đến trung bình</li>
-                    <li>Xác định điểm yếu cụ thể</li>
-                </ul>
+    <div class="timeline-item">
+        <div class="timeline-icon">🎯</div>
+        <div class="timeline-content">
+            <h3>Tuần 3-4 — Luyện tập chuyên sâu</h3>
+            <ul>
+                <li>Tập trung vào điểm yếu</li>
+                <li>Làm bài tập nâng cao</li>
+                <li>Kiểm tra tiến độ</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="timeline-item">
+        <div class="timeline-icon">📝</div>
+        <div class="timeline-content">
+            <h3>Tuần 5-6 — Luyện đề và tổng hợp</h3>
+            <ul>
+                <li>Làm đề thi thử</li>
+                <li>Rà soát kiến thức tổng thể</li>
+                <li>Tối ưu thời gian làm bài</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="timeline-item">
+        <div class="timeline-icon">🚀</div>
+        <div class="timeline-content">
+            <h3>Tuần 7-8 — Ôn tập và thi thử</h3>
+            <ul>
+                <li>Ôn tập điểm quan trọng</li>
+                <li>Thi thử nhiều lần</li>
+                <li>Điều chỉnh tâm lý</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<script>
+document.querySelectorAll(".timeline-content").forEach(card=>{
+    card.addEventListener("click", function(e){
+        const ripple = document.createElement("span");
+        ripple.classList.add("ripple");
+
+        const rect = card.getBoundingClientRect();
+        ripple.style.left = (e.clientX - rect.left) + "px";
+        ripple.style.top = (e.clientY - rect.top) + "px";
+
+        card.appendChild(ripple);
+
+        setTimeout(()=>{
+            ripple.remove();
+        },600);
+    });
+});
+</script>
+
+<script>
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+},{ threshold:0.3 });
+
+document.querySelectorAll(".plan-title, .plan-sub, .plan-desc")
+.forEach(el=>{
+    observer.observe(el);
+});
+</script>
+
+<div class="section-divider"></div>
+<section class="advanced-section">
+
+    <div class="advanced-wrapper">
+
+        <div class="advanced-badge">👑 ADVANCED</div>
+
+        <h2 class="advanced-title">
+            Ví Dụ Prompt Chuyên Nghiệp Hoàn Chỉnh
+        </h2>
+
+        <p class="advanced-desc">
+            Đây là mẫu prompt đầy đủ nhất, kết hợp tất cả các yếu tố để tạo ra bộ câu hỏi chất lượng cao.
+        </p>
+
+        <!-- CARD CHÍNH -->
+        <div class="advanced-card">
+
+            <div class="advanced-card-header">
+                <span>📄 Prompt Template Chuyên Nghiệp</span>
+                <button class="copy-btn-advanced" onclick="copyAdvancedPrompt()" id="copyBtnAdvanced">
+	               Sao chép
+                </button>
+            </div>
+
+<pre class="advanced-template line-numbers">
+Tôi cần một bộ câu hỏi trắc nghiệm chuyên nghiệp với các yêu cầu sau:
+
+<span class="section-line">📚 THÔNG TIN CƠ BẢN:</span>
+Môn học: Hóa học
+Lớp: 12
+Chương: Đại cương về kim loại
+Thời gian làm bài: 45 phút
+Số lượng câu: 20 câu
+
+<span class="section-line">🎯 YÊU CẦU VỀ ĐỘ KHÓ:</span>
+- 30% câu dễ (nhận biết, hiểu)
+- 50% câu trung bình (vận dụng)
+- 20% câu khó (vận dụng cao)
+
+<span class="section-line">📝 YÊU CẦU VỀ NỘI DUNG:</span>
+- Câu 1-5: Tính chất vật lý
+- Câu 6-10: Tính chất hóa học
+- Câu 11-15: Dãy điện hóa
+- Câu 16-20: Bài tập tính toán
+
+<span class="section-line">✅ YÊU CẦU VỀ ĐỊNH DẠNG:</span>
+- 4 đáp án A, B, C, D
+- Kèm đáp án đúng
+- Giải thích chi tiết
+- Phân loại Bloom
+- Thời gian gợi ý
+
+<span class="section-line">🎓 YÊU CẦU BỔ SUNG:</span>
+- Sát đề THPT Quốc gia
+- Có tính ứng dụng
+- Đáp án nhiễu hợp lý
+- Có tips làm bài nhanh
+
+</pre>
+
+<div class="highlight-section">
+    <h4>🌟 Điểm nổi bật của prompt này:</h4>
+
+    <div class="highlight-grid">
+
+        <div class="highlight-box">
+            <div class="highlight-icon">📌</div>
+            <div>Cấu trúc rõ ràng với emoji phân loại</div>
+        </div>
+
+        <div class="highlight-box">
+            <div class="highlight-icon">📊</div>
+            <div>Phân bổ độ khó theo tỷ lệ cụ thể</div>
+        </div>
+
+        <div class="highlight-box">
+            <div class="highlight-icon">📝</div>
+            <div>Yêu cầu chi tiết cho từng phần</div>
+        </div>
+
+        <div class="highlight-box">
+            <div class="highlight-icon">🎯</div>
+            <div>Đề cập chuẩn đầu ra (THPT QG)</div>
+        </div>
+
+        <div class="highlight-box">
+            <div class="highlight-icon">⏱</div>
+            <div>Quy định thời gian làm bài</div>
+        </div>
+
+        <div class="highlight-box">
+            <div class="highlight-icon">💡</div>
+            <div>Yêu cầu tips và giải thích</div>
+        </div>
+
+    </div>
+</div>
+
+<div class="tip-box">
+    <div class="tip-icon">!</div>
+
+    <div class="tip-content">
+        <div class="tip-title">Mẹo sử dụng template</div>
+        <div class="tip-text">
+            Bạn có thể điều chỉnh template này theo nhu cầu của mình.
+            Thay đổi môn học, số lượng câu, độ khó và các yêu cầu cụ thể.
+            <strong>Càng chi tiết, kết quả càng chính xác!</strong>
+        </div>
+    </div>
+</div>
+
+<script>
+function copyAdvancedPrompt(){
+    const text = document.querySelector(".advanced-template").innerText;
+    const btn = document.getElementById("copyBtnAdvanced");
+
+    navigator.clipboard.writeText(text).then(()=>{
+        btn.innerHTML = "✓ Đã sao chép";
+        btn.style.background = "#6FCF97";
+        btn.style.color = "#fff";
+
+        setTimeout(()=>{
+            btn.innerHTML = "Sao chép";
+            btn.style.background = "#ffffff";
+            btn.style.color = "#356BE9";
+        },2000);
+    });
+}
+</script>
+
+<section class="mistake-section reveal">
+
+    <h2 class="mistake-title">
+        🚫 Những Lỗi Thường Gặp Khi Viết Prompt
+    </h2>
+
+    <p class="mistake-sub">
+        Tránh những sai lầm phổ biến này để có được kết quả tốt nhất từ AI
+    </p>
+
+    <div class="mistake-wrapper">
+
+        <!-- ITEM 1 -->
+        <div class="mistake-card">
+            <div class="compare-grid">
+
+                <div class="wrong-box">
+                    <span class="label wrong">
+                        <span class="icon-circle wrong-icon">✖</span>
+                        Sai
+                    </span>
+                    <p>Tạo câu hỏi Toán cho tôi</p>
+                </div>
+
+                <div class="correct-box">
+                    <span class="label correct">
+                       <span class="icon-circle correct-icon">✔</span>
+                       Đúng
+                    </span>
+                    <p>
+                        Tạo 10 câu hỏi trắc nghiệm môn Toán lớp 11,
+                        chủ đề Hàm số lượng giác,
+                        độ khó trung bình,
+                        mỗi câu có 4 đáp án A, B, C, D
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="reason-box">
+                💡 Prompt quá chung chung, thiếu thông tin cụ thể về lớp,
+                chủ đề, số lượng và độ khó
             </div>
         </div>
 
-        <div class="timeline-item">
-            <div class="timeline-icon">🎯</div>
-            <div class="timeline-content">
-                <h3>Tuần 3-4</h3>
-                <p><strong>Luyện tập chuyên sâu</strong></p>
-                <ul>
-                    <li>Tập trung vào điểm yếu</li>
-                    <li>Làm bài tập nâng cao</li>
-                    <li>Kiểm tra tiến độ</li>
-                </ul>
+        <!-- ITEM 2 -->
+        <div class="mistake-card">
+            <div class="compare-grid">
+
+                <div class="wrong-box">
+                    <span class="icon-circle wrong-icon">✖</span>
+                        Sai
+                    </span>
+                    <p>Chấm bài cho tôi</p>
+                </div>
+
+                <div class="correct-box">
+                    <span class="label correct">
+                       <span class="icon-circle correct-icon">✔</span>
+                       Đúng
+                    </span>
+                    <p>
+                        Chấm bài làm của tôi với đáp án:
+                        Câu 1: A, Câu 2: C, Câu 3: B.
+                        Cho biết số câu đúng, điểm số,
+                        giải thích câu sai và đưa ra lời khuyên
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="reason-box">
+                💡 Không cung cấp đáp án và yêu cầu cụ thể về cách chấm và phân tích
             </div>
         </div>
 
-        <div class="timeline-item">
-            <div class="timeline-icon">📝</div>
-            <div class="timeline-content">
-                <h3>Tuần 5-6</h3>
-                <p><strong>Luyện đề và tổng hợp</strong></p>
-                <ul>
-                    <li>Làm đề thi thử</li>
-                    <li>Rà soát kiến thức tổng thể</li>
-                    <li>Tối ưu thời gian làm bài</li>
-                </ul>
+        <!-- ITEM 3 -->
+        <div class="mistake-card">
+            <div class="compare-grid">
+
+                <div class="wrong-box">
+                    <span class="icon-circle wrong-icon">✖</span>
+                        Sai
+                    </span>
+                    <p>Làm kế hoạch học cho tôi</p>
+                </div>
+
+                <div class="correct-box">
+                    <span class="label correct">
+                       <span class="icon-circle correct-icon">✔</span>
+                       Đúng
+                    </span>
+                    <p>
+                        Lập kế hoạch học Vật Lý lớp 12 trong 1 tháng,
+                        mỗi ngày 2 tiếng,
+                        mục tiêu đạt 8 điểm,
+                        điểm yếu là Dao động và Sóng
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="reason-box">
+                💡 Thiếu thông tin về môn học, thời gian, mục tiêu và điểm yếu cần cải thiện
             </div>
         </div>
 
-        <div class="timeline-item">
-            <div class="timeline-icon">🚀</div>
-            <div class="timeline-content">
-                <h3>Tuần 7-8</h3>
-                <p><strong>Ôn tập và thi thử</strong></p>
-                <ul>
-                    <li>Ôn tập điểm quan trọng</li>
-                    <li>Thi thử nhiều lần</li>
-                    <li>Điều chỉnh tâm lý</li>
-                </ul>
+        <!-- ITEM 4 -->
+        <div class="mistake-card">
+            <div class="compare-grid">
+
+                <div class="wrong-box">
+                    <span class="icon-circle wrong-icon">✖</span>
+                        Sai
+                    </span>
+                    <p>Tạo câu hỏi khó</p>
+                </div>
+
+                <div class="correct-box">
+                    <span class="label correct">
+                       <span class="icon-circle correct-icon">✔</span>
+                       Đúng
+                    </span>
+                    <p>
+                        Tạo 5 câu hỏi vận dụng cao môn Hóa học lớp 11,
+                        chủ đề Cân bằng hóa học,
+                        yêu cầu tính toán phức tạp
+                    </p>
+                </div>
+
             </div>
+
+            <div class="reason-box">
+                💡 "Khó" là khái niệm mơ hồ, cần xác định rõ mức độ và loại câu hỏi
+            </div>
+        </div>
+
+    </div>
+</section>
+</section>
+
+<script>
+window.addEventListener("scroll", function(){
+    const reveals = document.querySelectorAll(".reveal");
+
+    reveals.forEach((el)=>{
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        const elementVisible = 100;
+
+        if(elementTop < windowHeight - elementVisible){
+            el.classList.add("active");
+        }
+    });
+});
+</script>
+
+<section class="bne2-section">
+
+    <div class="bne2-container">
+
+        <h2 class="bne2-title">LỢI ÍCH</h2>
+
+        <h3 class="bne2-subtitle">
+            Tại Sao Nên Học Viết Prompt?
+        </h3>
+
+        <p class="bne2-desc">
+            Kỹ năng viết prompt tốt sẽ giúp bạn tận dụng tối đa sức mạnh của AI trong học tập
+        </p>
+
+        <div class="bne2-wrapper">
+
+            <!-- Box 1 -->
+            <div class="bne2-card card-1">
+                <div class="bne2-icon-box">⏳</div>
+                <h4>Tiết kiệm thời gian</h4>
+                <p class="bne2-text">
+                    Tạo câu hỏi và kế hoạch học tập trong vài phút thay vì hàng giờ
+                </p>
+            </div>
+
+            <!-- Box 2 -->
+            <div class="bne2-card card-2">
+                <div class="bne2-icon-box">🎯</div>
+                <h4>Kết quả chính xác</h4>
+                <p class="bne2-text">
+                    AI phân tích và đưa ra đánh giá khách quan, chi tiết về năng lực học tập
+                </p>
+            </div>
+
+            <!-- Box 3 -->
+            <div class="bne2-card card-3">
+                <div class="bne2-icon-box">📈</div>
+                <h4>Học tập hiệu quả</h4>
+                <p class="bne2-text">
+                    Kế hoạch cá nhân hóa giúp bạn tập trung vào điểm yếu và tiến bộ nhanh hơn
+                </p>
+            </div>
+
         </div>
 
     </div>
 
 </section>
-<script>
-const items = document.querySelectorAll(".timeline-item");
-
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting){
-            entry.target.classList.add("active");
-        }
-    });
-},{ threshold:0.2 });
-
-items.forEach(item => observer.observe(item));
-</script>
 
 </body>
 </html>
