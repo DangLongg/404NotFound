@@ -945,12 +945,12 @@ body::before{
 .quiz-guide-section{
     width:90%;
     max-width:1500px;
-    margin:80px auto;   /* giảm từ 140px xuống 80px */
+    margin:50px auto;   /* giảm từ 140px xuống 80px */
 }
 .quiz-heading{
     text-align:center;
     max-width:900px;
-    margin:0 auto 70px;
+    margin:0 auto 40px;
 }
 
 .quiz-small{
@@ -964,12 +964,12 @@ body::before{
     font-family:'Inter', sans-serif;
     font-weight:700;
     font-size:48px;
-    margin-bottom:20px;
+    margin-bottom:8px;
 }
 
 .quiz-heading p{
     font-size:17px;
-    line-height:1.7;
+    line-height:1.6;
     color:#444;
 }
 
@@ -1022,7 +1022,6 @@ body::before{
     margin-top:4px;
 }
 
-/* ===== EXAMPLE SECTION ===== */
 
 /* ===== EXAMPLE CARD ===== */
 
@@ -1042,7 +1041,7 @@ body::before{
 .example-big{
     font-family:'Anton';
     font-size:52px;
-    margin-bottom:50px;
+    margin-bottom:10px;
 }
 
 /* Card chính */
@@ -1111,13 +1110,13 @@ body::before{
 .grading-section{
     width:90%;
     max-width:1100px;
-    margin:60px auto 40px;
+    margin:20px auto 30px;
     text-align:center;
 }
 
 .grading-desc{
     max-width:800px;
-    margin:20px auto 50px;
+    margin:10px auto 30px;
     font-family:'Inter';
     font-size:16px;
     line-height:1.6;
@@ -1132,34 +1131,219 @@ body::before{
 
 /* ===== MINI BOX SMALL VERSION ===== */
 
+.grading-mini-container{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+    max-width:650px;
+    margin:30px auto 0;
+}
+
 .grading-mini-box{
-    background: rgba(255, 255, 255, 0.35); /* trong suốt mạnh hơn */
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    background:rgba(255,255,255,0.18);  /* tăng trong suốt */
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
 
-    padding:32px;               /* to hơn chút */
-    border-radius:22px;
-    text-align:center;
-    font-family:'Inter', sans-serif;
-    font-weight:600;
-    font-size:19px;
-    color:#000;
-
-    border:1px solid rgba(255,255,255,0.4); /* viền kính */
-    box-shadow:0 25px 55px rgba(0,0,0,0.15);
-    transition:0.3s ease;
+    padding:18px;
+    border-radius:16px;
+    font-size:15px;
+    transition:.3s ease;
 }
 
 .grading-mini-box:hover{
-    transform:translateY(-8px);
-    box-shadow:0 25px 55px rgba(0,0,0,0.18);
+    transform:translateY(-6px);
+    box-shadow:0 20px 45px rgba(0,0,0,0.18);
 }
-.grading-mini-container{
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap:22px;
-    max-width:700px;
-    margin:10px auto 0 auto; /* gần top hơn */
+
+.mini-content{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+}
+
+.mini-icon{
+    font-size:20px;
+}
+
+/* ===== PLANNING CARD ===== */
+
+.planning-section{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.planning-card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(20px);
+    border-radius:24px;
+    box-shadow:0 40px 80px rgba(0,0,0,0.25);
+    overflow:hidden;
+    text-align:left;
+    margin-bottom:20px;
+}
+
+.plan-header{
+    text-align:center;
+    margin:80px auto 40px;
+    max-width:900px;
+    padding:0 20px;
+}
+
+.plan-icon-box{
+    width:80px;
+    height:80px;
+    margin:30px auto 60px;
+    background:linear-gradient(135deg,#E3F2FD,#D6E9FF);
+    color:#004AAD;
+    border-radius:22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:34px;
+    color:#000; /* icon màu đen */
+    box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+.plan-main-title{
+    font-size:32px;
+    font-weight:700;
+    margin-bottom:12px;
+}
+
+.plan-sub-title{
+    font-size:20px;
+    font-weight:600;
+    margin-bottom:15px;
+    color:#004AAD;
+}
+
+.plan-desc{
+    font-size:17px;
+    line-height:1.6;
+    max-width:720px;
+    margin:0 auto;
+    opacity:0.8;
+}
+
+/* ===== TIME LINE ===== */
+
+.study-timeline{
+    max-width:850px;
+    margin:100px auto;
+    padding:0 20px;
+}
+
+.timeline-title{
+    text-align:center;
+    font-size:30px;
+    font-weight:700;
+    margin-bottom:60px;
+}
+
+.timeline{
+    position:relative;
+    padding-left:60px;
+}
+
+/* Vertical line */
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:30px;
+    top:0;
+    width:2px;
+    height:100%;
+    background:#E6EEF8;
+}
+
+/* Each item */
+.timeline-item{
+    position:relative;
+    margin-bottom:60px;
+    opacity:0;
+    transform:translateY(40px);
+    transition:all .6s ease;
+}
+
+/* Icon box */
+.timeline-icon{
+    position:absolute;
+    left:-60px;
+    top:0;
+    width:50px;
+    height:50px;
+    background:#004AAD;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    color:#fff;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Card */
+.timeline-content{
+    background:#ffffff;
+    padding:25px 30px;
+    border-radius:18px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.06);
+    border:1px solid #F1F5F9;
+}
+
+.timeline-content h3{
+    margin-bottom:8px;
+    color:#004AAD;
+}
+
+.timeline-content ul{
+    padding-left:18px;
+    margin-top:8px;
+}
+
+.timeline-content li{
+    margin-bottom:6px;
+    font-size:15px;
+}
+
+/* Animation active */
+.timeline-item.active{
+    opacity:1;
+    transform:translateY(0);
+}
+/* Hover card */
+.timeline-item:hover .timeline-content{
+    transform:translateY(-8px);
+    box-shadow:0 25px 60px rgba(0,74,173,0.15);
+    transition:all .3s ease;
+}
+
+/* Hover icon */
+.timeline-item:hover .timeline-icon{
+    transform:scale(1.1);
+    box-shadow:0 15px 35px rgba(0,74,173,0.35);
+    transition:all .3s ease;
+}
+
+/* Smooth transition mặc định */
+.timeline-content{
+    transition:all .3s ease;
+}
+
+.timeline-icon{
+    transition:all .3s ease;
+}
+
+/* Làm line sáng hơn khi hover */
+.timeline-item:hover::after{
+    content:"";
+    position:absolute;
+    left:-30px;
+    top:50px;
+    width:2px;
+    height:calc(100% + 10px);
+    background:#BFD8FF;
 }
 </style>
 </head>
@@ -1766,13 +1950,195 @@ function copyPrompt2(){
 </script>
 
 <div class="grading-mini-container">
-    <div class="grading-mini-box">Box 1</div>
-    <div class="grading-mini-box">Box 2</div>
-    <div class="grading-mini-box">Box 3</div>
-    <div class="grading-mini-box">Box 4</div>
-</div>
+
+    <div class="grading-mini-box">
+        <div class="mini-content">
+            <span class="mini-icon">📝</span>
+            <span>Chấm điểm tự động</span>
+        </div>
+    </div>
+
+    <div class="grading-mini-box">
+        <div class="mini-content">
+            <span class="mini-icon">🔍</span>
+            <span>Phân tích lỗi sai</span>
+        </div>
+    </div>
+
+    <div class="grading-mini-box">
+        <div class="mini-content">
+            <span class="mini-icon">📖</span>
+            <span>Giải thích chi tiết</span>
+        </div>
+    </div>
+
+    <div class="grading-mini-box">
+        <div class="mini-content">
+            <span class="mini-icon">💡</span>
+            <span>Lời khuyên học tập</span>
+        </div>
+    </div>
 
 </div>
+
+<section class="plan-header">
+
+    <div class="plan-icon-box">
+        📅
+    </div>
+
+    <h2 class="plan-main-title">
+        Xây Dựng Lộ Trình Học Tập Cá Nhân Hóa Với AI
+    </h2>
+
+    <h3 class="plan-sub-title">
+        Cách Yêu Cầu Lập Kế Hoạch Học Tập
+    </h3>
+
+    <p class="plan-desc">
+        AI có thể tạo lộ trình học tập cá nhân hóa dựa trên mục tiêu, thời gian 
+        và điểm yếu của bạn, giúp bạn tối ưu hiệu quả học tập trong thời gian ngắn nhất.
+    </p>
+
+</section>
+
+</section>
+
+<section class="example-section">
+
+    <div class="example-heading">
+        <div class="example-small">Ví dụ thực tế</div>
+        <div class="example-big">Prompt Mẫu Hoàn Chỉnh</div>
+    </div>
+
+    <div class="example-card">
+
+        <div class="example-card-header">
+            <span>📋 Prompt Template</span>
+            <button id="copyBtn3" class="copy-btn" onclick="copyPrompt3()">
+    Sao chép
+</button>
+            </button>
+        </div>
+
+        <div class="code-area">
+<pre id="promptText3"><b>Yêu cầu:</b>
+Hãy lập kế hoạch học tập cá nhân hóa cho tôi:
+
+<b>Thông tin học sinh:</b>
+- Lớp: 11
+- Môn học cần cải thiện: Toán, Vật Lý
+- Thời gian có thể học mỗi ngày: 2-3 tiếng
+- Mục tiêu: Đạt 8+ điểm trong kỳ thi cuối kỳ (còn 2 tháng)
+- Điểm yếu hiện tại: Hàm số, Dao động cơ
+
+<b>Yêu cầu kế hoạch:</b>
+1. Chia nhỏ mục tiêu theo tuần
+2. Phân bổ thời gian hợp lý cho từng môn
+3. Đề xuất tài liệu và bài tập cụ thể
+4. Lịch ôn tập và kiểm tra định kỳ
+5. Chiến lược xử lý điểm yếu
+6. Thời gian nghỉ ngơi hợp lý
+</pre>
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+function copyPrompt3(){
+    const text = document.getElementById("promptText3").innerText;
+    const btn = document.getElementById("copyBtn3");
+
+    navigator.clipboard.writeText(text).then(() => {
+        btn.innerHTML = "✓ Đã sao chép";
+        btn.style.background = "#6FCF97";
+        btn.style.color = "#fff";
+
+        setTimeout(() => {
+            btn.innerHTML = "Sao chép";
+            btn.style.background = "#ffffff";
+            btn.style.color = "#004AAD";
+        }, 2000);
+    });
+}
+</script>
+
+<section class="study-timeline">
+
+    <h2 class="timeline-title">Ví dụ Lộ Trình Học Tập</h2>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+            <div class="timeline-icon">📘</div>
+            <div class="timeline-content">
+                <h3>Tuần 1-2</h3>
+                <p><strong>Củng cố nền tảng</strong></p>
+                <ul>
+                    <li>Ôn lại lý thuyết cơ bản</li>
+                    <li>Làm bài tập dễ đến trung bình</li>
+                    <li>Xác định điểm yếu cụ thể</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-icon">🎯</div>
+            <div class="timeline-content">
+                <h3>Tuần 3-4</h3>
+                <p><strong>Luyện tập chuyên sâu</strong></p>
+                <ul>
+                    <li>Tập trung vào điểm yếu</li>
+                    <li>Làm bài tập nâng cao</li>
+                    <li>Kiểm tra tiến độ</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-icon">📝</div>
+            <div class="timeline-content">
+                <h3>Tuần 5-6</h3>
+                <p><strong>Luyện đề và tổng hợp</strong></p>
+                <ul>
+                    <li>Làm đề thi thử</li>
+                    <li>Rà soát kiến thức tổng thể</li>
+                    <li>Tối ưu thời gian làm bài</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-icon">🚀</div>
+            <div class="timeline-content">
+                <h3>Tuần 7-8</h3>
+                <p><strong>Ôn tập và thi thử</strong></p>
+                <ul>
+                    <li>Ôn tập điểm quan trọng</li>
+                    <li>Thi thử nhiều lần</li>
+                    <li>Điều chỉnh tâm lý</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<script>
+const items = document.querySelectorAll(".timeline-item");
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("active");
+        }
+    });
+},{ threshold:0.2 });
+
+items.forEach(item => observer.observe(item));
+</script>
+
 </body>
 </html>
-
