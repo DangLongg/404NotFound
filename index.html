@@ -812,6 +812,193 @@ body::before{
     .card:nth-child(2),
     .card:nth-child(3){transform:none;}
 }
+
+/* ============================= */
+/* MOBILE OPTIMIZATION */
+/* ============================= */
+
+@media (max-width:1024px){
+    .features,
+    .impact-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .benefit-box{
+        padding:60px 40px 50px 120px;
+    }
+
+    .benefit-icon{
+        left:30px;
+        top:40px;
+    }
+}
+
+@media (max-width:768px){
+
+    /* HEADER */
+    .header-inner{
+        width:92%;
+    }
+
+    .top-menu{
+        display:none; /* ẩn menu desktop */
+    }
+
+    /* HERO */
+    .hero-text{
+        padding-top:120px;
+        margin:0 6%;
+        max-width:100%;
+    }
+
+    .main-line{
+        font-size:36px;
+    }
+
+    .sub-line{
+        font-size:22px;
+    }
+
+    .description{
+        font-size:16px;
+    }
+
+    /* BOXES */
+    .info-boxes{
+        flex-direction:column;
+        margin:30px 6%;
+    }
+
+    .box{
+        width:100%;
+    }
+
+    /* SECTION TITLES */
+    .big-title{
+        font-size:42px;
+    }
+
+    .medium-title{
+        font-size:22px;
+    }
+
+    /* GALLERY */
+    .gallery,
+    .gallery-text{
+        grid-template-columns:1fr;
+        margin-left:6%;
+        margin-right:6%;
+    }
+
+    /* LIMITATION */
+    .limitation-section{
+        flex-direction:column;
+        margin:100px 6%;
+        gap:30px;
+    }
+
+    .limitation-left div{
+        font-size:40px;
+    }
+
+    /* IMAGE CARDS */
+    .image-cards{
+        grid-template-columns:1fr;
+        margin:40px 6%;
+    }
+
+    .card:nth-child(2),
+    .card:nth-child(3){
+        transform:none;
+    }
+
+    /* IMG9 */
+    .img9-section{
+        height:60vh;
+        margin-top:150px;
+    }
+
+    .img9-text{
+        font-size:34px;
+        left:20px;
+        top:40px;
+    }
+
+    .discover-box{
+        top:75%;
+        padding:12px 20px;
+        font-size:14px;
+    }
+
+    /* SOLUTION */
+    .solution-heading .big{
+        font-size:40px;
+    }
+
+    .solution-heading .medium{
+        font-size:22px;
+    }
+
+    /* FEATURES */
+    .features{
+        grid-template-columns:1fr;
+        padding:0 6%;
+    }
+
+    /* BENEFITS */
+    .benefit-section{
+        margin:100px 6%;
+    }
+
+    .benefit-box{
+        padding:70px 25px 40px 25px;
+    }
+
+    .benefit-icon{
+        position:static;
+        margin-bottom:20px;
+    }
+
+    .mini-boxes,
+    .mini-boxes.three,
+    .mini-boxes.four,
+    .mini-boxes.five{
+        grid-template-columns:1fr;
+    }
+
+    /* IMPACT */
+    .impact-grid{
+        grid-template-columns:1fr;
+        margin:40px 6% 100px;
+    }
+
+    .impact-title .big{
+        font-size:42px;
+    }
+
+    .impact-title .medium{
+        font-size:22px;
+    }
+}
+
+@media (max-width:480px){
+
+    .main-line{
+        font-size:30px;
+    }
+
+    .big-title{
+        font-size:34px;
+    }
+
+    .feature-title .main{
+        font-size:38px;
+    }
+
+    .img9-text{
+        font-size:28px;
+    }
+}
 </style>
 </head>
 <body>
@@ -909,7 +1096,7 @@ body::before{
       <p>
         Việc cá nhân hóa học tập khó thực hiện<br>
         khi mọi học sinh phải theo cùng một lộ<br>
-        trình và phương pháp giảng dạy.
+        trình và phương pháp giảng dạy
       </p>
     </div>
   </div>
